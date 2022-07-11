@@ -12,7 +12,8 @@
     <color name="splash_transparent">#80B1D4A5</color>
     <color name="gray">#676464</color>
     <color name="blue">#1976D2</color>
-    <color name="media_tree">#1ED760</color>
-    <color name="media_tree2">#801ED760</color>
 
+    <color name="green">#1ED760</color>
+    <color name="green_trans80">#801ED760</color>
+    <color name="black_trans">#95000000</color>
 </resources>
