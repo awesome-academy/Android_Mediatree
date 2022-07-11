@@ -4,6 +4,12 @@
     <string name="library">Library</string>
     <string name="search">Search</string>
     <string name="profile">Profile</string>
+
+    <string name="home_nav">HOME</string>
+    <string name="library_nav">LIBARY</string>
+    <string name="search_nav">SEARCH</string>
+    <string name="profile_nav">PROFILE</string>
+
     <string name="design_by">Design by</string>
     <string name="user_truongdc">`@`truongdc21</string>
     <string name="welcome_you_to">Wellcome you to</string>

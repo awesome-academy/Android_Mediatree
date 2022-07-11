@@ -1,8 +1,6 @@
 package com.truongdc21.mediatree.intro
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -21,24 +19,25 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         checkFirstInstall()
     }
 
-    override fun initData() {}
 
+    override fun initData() {
+    }
     private fun checkFirstInstall() = lifecycleScope.launchWhenCreated {
         val isCheck : Boolean? = dataStore.readPreferencesFirstInstall()
         if (isCheck != null){
-            showSplash()
+            showAnimation()
             this@SplashActivity.switchActivity(MainActivity())
             finish()
 
         }else {
-            showSplash()
+            showAnimation()
             dataStore.savePreferencesFirstInstall(true)
-            this@SplashActivity.switchActivity(FisrtInstallActivity())
+            this@SplashActivity.switchActivity(FirstInstallActivity())
             finish()
         }
     }
 
-    private suspend fun showSplash(){
+    private suspend fun showAnimation(){
         binding.apply {
             delay(Constant.TIME_DELAY_SPLASH)
             loadingONE.setBackgroundResource(R.drawable.bgr_radius)
