@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Media Tree</string>
+    <string name="home">Home</string>
+    <string name="library">Library</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="design_by">Design by</string>
+    <string name="user_truongdc">`@`truongdc21</string>
+    <string name="welcome_you_to">Wellcome you to</string>
+    <string name="login">Login</string>
+    <string name="skips">Skips</string>
 </resources>
