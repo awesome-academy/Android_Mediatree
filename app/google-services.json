@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "184923950123",
+    "project_id": "mediatree-2ad2c",
+    "storage_bucket": "mediatree-2ad2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184923950123:android:43fc2add7b2393ab572e6e",
+        "android_client_info": {
+          "package_name": "com.truongdc21.mediatree"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184923950123-fe97pj8dt32jhvvcov5rd6qjnsl7b2la.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.truongdc21.mediatree",
+            "certificate_hash": "c04cc9220ad813a24afb45443f9fe106b38323e7"
+          }
+        },
+        {
+          "client_id": "184923950123-bsolpevggqh3uij3lftiaan3idncsmq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvWURPfuNmLApLU-Z55opAynY9LUZCeTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184923950123-bsolpevggqh3uij3lftiaan3idncsmq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

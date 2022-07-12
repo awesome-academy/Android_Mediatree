@@ -19,7 +19,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         checkFirstInstall()
     }
 
-
     override fun initData() {
     }
     private fun checkFirstInstall() = lifecycleScope.launchWhenCreated {

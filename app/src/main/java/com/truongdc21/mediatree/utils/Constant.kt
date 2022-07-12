@@ -9,3 +9,8 @@ object ConstantPreferences {
     const val dataStore = "dataStore"
     const val fisrtInstallKey = "fisrtInstalApp"
 }
+
+object ConstantDatabase {
+
+    const val NAME_DATABASE = "songDB"
+}
