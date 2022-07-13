@@ -14,6 +14,10 @@
     <color name="blue">#1976D2</color>
 
     <color name="green">#1ED760</color>
-    <color name="green_trans80">#801ED760</color>
+    <color name="green_trans80">#951ED760</color>
     <color name="black_trans">#95000000</color>
+    
+    <color name="blue_gradient">#23BADF</color>
+    <color name="pink_gradient">#d32fec</color>
+    <color name="purple_gradient">#8367f4</color>
 </resources>

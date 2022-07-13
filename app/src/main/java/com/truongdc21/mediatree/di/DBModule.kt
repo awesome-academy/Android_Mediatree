@@ -21,7 +21,6 @@ object DBModule {
         @ApplicationContext context: Context
     ): MyDatabase =
         Room.databaseBuilder(context, MyDatabase::class.java, MyDatabase.NAME_DATABASE).allowMainThreadQueries().build()
-
     @Singleton
     @Provides
     fun provideSongDao(db : MyDatabase): SongDao = db.songDao()
