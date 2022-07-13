@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'jacoco'
+    id 'com.google.gms.google-services'
 }
 apply from: "$project.rootDir/jacoco.gradle"
 
@@ -91,4 +92,10 @@ dependencies {
 
     //DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-storage'
 }
