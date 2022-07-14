@@ -9,6 +9,7 @@ import com.truongdc21.mediatree.MainActivity
 import com.truongdc21.mediatree.R
 import com.truongdc21.mediatree.base.BaseActivity
 import com.truongdc21.mediatree.databinding.ActivitySplashBinding
+import com.truongdc21.mediatree.ui.activity.LoginActivity
 import com.truongdc21.mediatree.utils.*
 import kotlinx.coroutines.delay
 
@@ -25,13 +26,13 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         val isCheck : Boolean? = dataStore.readPreferencesFirstInstall()
         if (isCheck != null){
             showAnimation()
-            this@SplashActivity.switchActivity(MainActivity())
+            this@SplashActivity.switchActivity(MainActivity.newInstance())
             finish()
 
         }else {
             showAnimation()
             dataStore.savePreferencesFirstInstall(true)
-            this@SplashActivity.switchActivity(FirstInstallActivity())
+            this@SplashActivity.switchActivity(FirstInstallActivity.newInstance())
             finish()
         }
     }
@@ -44,6 +45,14 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
             loadingTWO.setBackgroundResource(R.drawable.bgr_radius)
             delay(Constant.TIME_DELAY_SPLASH)
             loadingTHREE.setBackgroundResource(R.drawable.bgr_radius)
+        }
+    }
+
+    companion object {
+        private var instance : SplashActivity? = null
+
+        fun newInstance() = synchronized(this){
+            instance ?: SplashActivity().also { instance = it }
         }
     }
 }

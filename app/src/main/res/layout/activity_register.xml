@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/dp_10"
+    android:paddingEnd="@dimen/dp_10"
+    tools:context=".ui.activity.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/ic_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/dp_125"
+        android:layout_height="@dimen/dp_125"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:background="@drawable/ic_account_circle"
+        android:backgroundTint="@color/green"
+        app:layout_constraintBottom_toTopOf="@id/viewRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/viewRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/viewOr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp_32"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@drawable/bgr_edittext_radius"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="@dimen/dp_20"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/dp_20" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@drawable/bgr_edittext_radius"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="@dimen/dp_20"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/dp_20" />
+
+        <EditText
+            android:id="@+id/edtComfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@drawable/bgr_edittext_radius"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="@dimen/dp_20"
+            android:hint="@string/enter_comfirm_password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/dp_20" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/bgr_radius_button"
+            android:elevation="@dimen/dp_2"
+            android:stateListAnimator="@null"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_22" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewOr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/btnSignInGoogle">
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_50"
+            android:background="@color/gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/or"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dp_50"
+            android:background="@color/gray" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSignInGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:background="@drawable/bgr_sign_in_google"
+        android:drawableStart="@drawable/google"
+        android:elevation="@dimen/dp_2"
+        android:paddingStart="@dimen/dp_20"
+        android:stateListAnimator="@null"
+        android:text="@string/signin_with_google"
+        android:textAllCaps="false"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
