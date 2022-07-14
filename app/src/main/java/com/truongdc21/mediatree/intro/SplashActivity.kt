@@ -50,7 +50,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
 
     companion object {
         private var instance : SplashActivity? = null
-
         fun newInstance() = synchronized(this){
             instance ?: SplashActivity().also { instance = it }
         }

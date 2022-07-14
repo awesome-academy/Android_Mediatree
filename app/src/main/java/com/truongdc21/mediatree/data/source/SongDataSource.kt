@@ -13,13 +13,13 @@ interface SongDataSource {
 
         suspend fun deleteLocalSong(song: Song)
 
-        suspend fun getSongLocal() : LiveData<List<Song>>
+        suspend fun getSongLocal(): LiveData<List<Song>>
     }
 
     interface Remote {
 
         suspend fun insertRemoteSong(song: Song)
 
-        suspend fun getSongRemote() : LiveData<List<Song>>
+        suspend fun getSongRemote(): LiveData<List<Song>>
     }
 }
