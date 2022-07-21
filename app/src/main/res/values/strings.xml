@@ -34,4 +34,13 @@
     <string name="please_login_to_use">Please login to use!</string>
     <string name="update_profile">Update your profile</string>
     <string name="please_up_profile">Please update profile!</string>
+
+    <string name="artists">Artists</string>
+    <string name="playlist">Playlist</string>
+    <string name="play_all">Play all</string>
+    <string name="Songs">Songs</string>
+    <string name="Song">Song</string>
+    <string name="tracks">tracks</string>
+    <string name="isEmpty">List song is Empty !!</string>
+
 </resources>

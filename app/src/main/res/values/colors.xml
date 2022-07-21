@@ -20,4 +20,7 @@
     <color name="blue_gradient">#23BADF</color>
     <color name="pink_gradient">#d32fec</color>
     <color name="purple_gradient">#8367f4</color>
+
+    <color name="white_stran95">#95FFFFFF</color>
+    <color name="black_stran45">#45000000</color>
 </resources>

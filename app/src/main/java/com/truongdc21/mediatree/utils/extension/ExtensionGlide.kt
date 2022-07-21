@@ -1,6 +1,5 @@
 package com.truongdc21.mediatree.utils.extension
 
-import android.content.Context
 import android.net.Uri
 import android.widget.ImageView
 import com.bumptech.glide.Glide
