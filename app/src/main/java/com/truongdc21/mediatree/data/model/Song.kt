@@ -6,10 +6,9 @@ import androidx.room.PrimaryKey
 @Entity
 data class Song(
     @PrimaryKey (autoGenerate = true)
-    val Id : Int?,
-    val mediaId : String?,
-    val title : String?,
-    val artist : String?,
-    val songUrl : String?,
-    val imageSong : String?
+    val Id : Int? = null,
+    val artist : String? = null,
+    val imgSongURl : String? = null,
+    val songURL : String? = null,
+    val title : String? = null
 )

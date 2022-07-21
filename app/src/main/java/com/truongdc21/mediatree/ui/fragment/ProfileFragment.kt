@@ -26,6 +26,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             btnSwithToLogin.setOnClickListener {
                 it.setAlphaAnimation()
                 this@ProfileFragment.activity?.switchActivity(LoginActivity.newInstance())
+                it.setAlphaAnimation()
             }
         }
     }
@@ -40,6 +41,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             if (mViewModel.authFirebase.currentUser != null){
                 viewNotLogin.isVisible = false
                 viewLoged.isVisible = true
+
                 mViewModel.authProfileLiveData.observe(this@ProfileFragment) { user ->
                     tvEmailUser.text = user.userEmail
                     user.userName?.let {
