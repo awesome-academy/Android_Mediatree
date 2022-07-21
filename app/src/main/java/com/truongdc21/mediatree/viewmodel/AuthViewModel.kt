@@ -1,7 +1,9 @@
 package com.truongdc21.mediatree.viewmodel
 
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.firebase.auth.FirebaseAuth
 import com.truongdc21.mediatree.base.BaseViewModel
+import com.truongdc21.mediatree.data.model.User
 import com.truongdc21.mediatree.repository.AuthRepository
 import com.truongdc21.mediatree.utils.livedata.SingleLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,6 +17,8 @@ class AuthViewModel @Inject constructor(
    val signInAuthLiveData = SingleLiveData<Boolean>()
    val signUpAuthLiveData = SingleLiveData<Boolean>()
    val signInWithGoogleLiveData = SingleLiveData<Boolean>()
+   val authProfileLiveData = SingleLiveData<User>()
+   var authFirebase = FirebaseAuth.getInstance()
 
    fun signInAuth(email : String, pass : String) {
       launchTaskSyncAuthFirebase(
@@ -45,6 +49,17 @@ class AuthViewModel @Inject constructor(
          },
          onSuccess = {
             signInWithGoogleLiveData.value = true
+         }
+      )
+   }
+
+   fun getAuthProfile() {
+      launchTaskSync(
+         onRequest = {
+            authRepository.getAuthProfile()
+         },
+         onSuccess = { user ->
+            authProfileLiveData.value = user
          }
       )
    }

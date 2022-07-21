@@ -22,4 +22,9 @@ class AuthRepository @Inject constructor(
         withContextResult {
             remoteAuth.signInWithGoogle(account)
         }
+
+    suspend fun getAuthProfile() =
+        withContextResult {
+            remoteAuth.getAuthProfile()
+        }
 }

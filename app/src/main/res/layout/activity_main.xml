@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_10"
         android:layout_marginEnd="@dimen/dp_10"
-        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_10"
         android:background="@drawable/bgr_radius_bottom"
         app:itemIconTint="@color/custom_color_bottom_nav"
         app:itemTextColor="@color/white"
@@ -39,6 +39,7 @@
         android:layout_height="@dimen/dp_60"
         android:background="@drawable/bgr_radius_media"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="@id/bottomNavigationView">
