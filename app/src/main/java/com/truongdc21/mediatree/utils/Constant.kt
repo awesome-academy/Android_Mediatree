@@ -22,3 +22,10 @@ object ConstantFirebase {
     const val PLAYLIST_COLLECTION = "playlist"
     const val ARTIST_COLLECTION = "artists"
 }
+
+object ConstantMedia {
+    const val NOTIFICATION_CHANNEL_ID = "music"
+    const val NOTIFICATION_ID = 1
+    const val KEY_INTENT_SONG = "songs"
+    const val KEY_INTENT_LIST_SONG = "list_songs"
+}

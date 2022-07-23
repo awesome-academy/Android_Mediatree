@@ -4,7 +4,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.truongdc21.mediatree.base.BaseActivity
 import com.truongdc21.mediatree.databinding.ActivityMainBinding
-import com.truongdc21.mediatree.ui.activity.RegisterActivity
+import com.truongdc21.mediatree.ui.fragment.MediaPlayBottomSheetFragment
+import com.truongdc21.mediatree.utils.extension.setAlphaAnimation
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -12,6 +13,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun initViews() {
         setBottomNavigation()
+        binding.apply {
+            viewMedia.setOnClickListener {
+                it.setAlphaAnimation()
+                val bottomSheetDialog = MediaPlayBottomSheetFragment()
+                bottomSheetDialog.show(supportFragmentManager, bottomSheetDialog.tag)
+            }
+        }
     }
 
     override fun initData() {
@@ -21,6 +29,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val navController = findNavController(R.id.fragmentHost)
         binding.bottomNavigationView.setupWithNavController(navController)
     }
+
 
     companion object {
         private var instance : MainActivity? = null

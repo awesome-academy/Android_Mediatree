@@ -14,6 +14,9 @@
             android:id="@+id/action_homeFragment_to_listSongFragment"
             app:destination="@id/listSongFragment" >
         </action>
+        <action
+            android:id="@+id/action_homeFragment_to_mediaPlayBottomSheetFragment"
+            app:destination="@id/mediaPlayBottomSheetFragment" />
     </fragment>
     <fragment
         android:id="@+id/libraryFragment"
@@ -49,5 +52,12 @@
             android:name="currentPlaylist"
             app:argType="com.truongdc21.mediatree.data.model.Playlist"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_listSongFragment_to_mediaPlayBottomSheetFragment"
+            app:destination="@id/mediaPlayBottomSheetFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/mediaPlayBottomSheetFragment"
+        android:name="com.truongdc21.mediatree.ui.fragment.MediaPlayBottomSheetFragment"
+        android:label="MediaPlayBottomSheetFragment" />
 </navigation>

@@ -46,9 +46,11 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="@dimen/dp_40"
-        android:layout_height="@dimen/dp_40"
+        android:id="@+id/imgMore"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/ic_next"
+        android:layout_marginStart="@dimen/dp_15"
+        android:background="@drawable/ic_more"
         android:backgroundTint="@color/gray" />
 </LinearLayout>

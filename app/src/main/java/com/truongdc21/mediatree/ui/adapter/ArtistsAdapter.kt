@@ -1,22 +1,18 @@
 package com.truongdc21.mediatree.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.truongdc21.mediatree.data.model.Artists
-import com.truongdc21.mediatree.data.model.Playlist
 import com.truongdc21.mediatree.databinding.LayoutItemArtistsBinding
 import com.truongdc21.mediatree.utils.diffcallback.ArtistsDiffCallBack
 import com.truongdc21.mediatree.utils.extension.setAlphaAnimation
 import com.truongdc21.mediatree.utils.extension.showImageGlideWithURL
 import java.util.concurrent.Executors
 
-class ArtistsAdapter(
-    private val mContext : Context
-): ListAdapter< Artists, ArtistsAdapter.ArtistsViewHolder>(
+class ArtistsAdapter(): ListAdapter< Artists, ArtistsAdapter.ArtistsViewHolder>(
     AsyncDifferConfig.Builder(ArtistsDiffCallBack())
         .setBackgroundThreadExecutor(Executors.newSingleThreadExecutor())
         .build()

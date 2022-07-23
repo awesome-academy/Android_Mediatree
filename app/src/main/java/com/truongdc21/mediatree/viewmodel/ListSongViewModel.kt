@@ -19,6 +19,7 @@ class ListSongViewModel @Inject constructor(
 
     val listSongLiveData = MutableLiveData<List<Song>>()
     val loadListSong = SingleLiveData<Boolean>()
+    val mListSong = mutableListOf<Song>()
 
     fun getSongFromArtists(listArtist : MutableList<String>)
     = viewModelScope.launch {
@@ -36,7 +37,11 @@ class ListSongViewModel @Inject constructor(
                 }
             }
         }
-        listSongLiveData.value = listSong
+        mListSong.apply {
+            clear()
+            addAll(listSong)
+            listSongLiveData.value = this
+        }
         loadListSong.value = false
     }
 
@@ -56,7 +61,11 @@ class ListSongViewModel @Inject constructor(
                 }
             }
         }
-        listSongLiveData.value = listSong
+        mListSong.apply {
+            clear()
+            addAll(listSong)
+            listSongLiveData.value = this
+        }
         loadListSong.value = false
     }
 }

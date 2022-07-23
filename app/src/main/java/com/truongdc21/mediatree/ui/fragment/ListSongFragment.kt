@@ -1,8 +1,10 @@
 package com.truongdc21.mediatree.ui.fragment
 
 import android.app.ProgressDialog
+import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -10,18 +12,25 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.truongdc21.mediatree.R
 import com.truongdc21.mediatree.base.BaseFragment
+import com.truongdc21.mediatree.data.model.Song
 import com.truongdc21.mediatree.databinding.FragmentListSongBinding
 import com.truongdc21.mediatree.ui.adapter.SongAdapter
+import com.truongdc21.mediatree.ui.adapter.callback.IClickItemSong
 import com.truongdc21.mediatree.utils.extension.setAlphaAnimation
 import com.truongdc21.mediatree.utils.extension.showPropressbar
 import com.truongdc21.mediatree.viewmodel.ListSongViewModel
+import com.truongdc21.mediatree.viewmodel.MediaSharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ListSongFragment : BaseFragment<FragmentListSongBinding>(FragmentListSongBinding::inflate) {
+class ListSongFragment :
+        BaseFragment<FragmentListSongBinding>(FragmentListSongBinding::inflate),
+        IClickItemSong
+{
 
     private val mViewModel : ListSongViewModel by viewModels()
-    private val adapterSong  by lazy { SongAdapter(this@ListSongFragment.requireContext()) }
+    private val mMediaSharedViewModel: MediaSharedViewModel by activityViewModels()
+    private val adapterSong  by lazy { SongAdapter(this) }
     private val mProgressDialog by lazy { ProgressDialog(this@ListSongFragment.requireContext()) }
 
     val argsCurrent by navArgs<ListSongFragmentArgs>()
@@ -35,6 +44,9 @@ class ListSongFragment : BaseFragment<FragmentListSongBinding>(FragmentListSongB
                 findNavController().navigate(
                     R.id.action_listSongFragment_to_homeFragment
                 )
+            }
+            btnPlayAll.setOnClickListener {
+                clickBtnAllPlay()
             }
         }
     }
@@ -71,7 +83,6 @@ class ListSongFragment : BaseFragment<FragmentListSongBinding>(FragmentListSongB
                 mViewModel.getSongFromArtists(it)
             }
         }
-
     }
 
     private fun showAdapterSong() {
@@ -124,8 +135,32 @@ class ListSongFragment : BaseFragment<FragmentListSongBinding>(FragmentListSongB
         bottomNavigationView?.visibility = View.VISIBLE
     }
 
+    private fun clickBtnAllPlay() {
+        mMediaSharedViewModel.addAllSongToList(mViewModel.mListSong)
+        argsCurrent.currentArtists?.nameArtist?.let {
+            mMediaSharedViewModel.setTitleTop(it)
+        }
+        argsCurrent.currentPlaylist?.name?.let {
+            mMediaSharedViewModel.setTitleTop(it)
+        }
+        findNavController().navigate(
+            R.id.action_listSongFragment_to_mediaPlayBottomSheetFragment
+        )
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         mProgressDialog.dismiss()
+    }
+
+    override fun clickItemSong(song: Song , position : Int) {
+        mMediaSharedViewModel.addSongToList(song)
+        mMediaSharedViewModel.setTitleTop(resources.getString(R.string.no_playlist))
+        findNavController().navigate(
+            R.id.action_listSongFragment_to_mediaPlayBottomSheetFragment
+        )
+    }
+
+    override fun clickItemMore(song: Song) {
     }
 }

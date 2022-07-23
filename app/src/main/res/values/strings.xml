@@ -42,5 +42,9 @@
     <string name="Song">Song</string>
     <string name="tracks">tracks</string>
     <string name="isEmpty">List song is Empty !!</string>
+    <string name="no_playlist">No Playlist</string>
+
+    <string name="notification_channel_name">Music Channel</string>
+    <string name="notification_channel_description">Shows the currently playing music</string>
 
 </resources>

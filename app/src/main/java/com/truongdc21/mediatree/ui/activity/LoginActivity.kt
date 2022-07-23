@@ -27,6 +27,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
             tvRegisteNewAccounts.setOnClickListener {
                 this@LoginActivity.switchActivity(RegisterActivity.newInstance())
             }
+
             imgBack.setOnClickListener {
                 finish()
             }
