@@ -38,8 +38,9 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_60"
         android:background="@drawable/bgr_radius_media"
+        android:elevation="@dimen/dp_10"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="@id/bottomNavigationView">
@@ -90,7 +91,7 @@
                 android:layout_height="@dimen/dp_40"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/ic_pause_media"
-                android:backgroundTint="@color/white" />
+                android:backgroundTint="@color/green" />
 
             <View
                 android:layout_width="wrap_content"
@@ -133,5 +134,4 @@
             android:background="@color/green"
             app:layout_constraintBottom_toTopOf="@id/bottomNavigationView" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

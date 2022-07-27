@@ -1,8 +1,11 @@
 package com.truongdc21.mediatree.repository
 
+import com.google.firebase.firestore.ktx.toObject
 import com.truongdc21.mediatree.base.BaseRepository
+import com.truongdc21.mediatree.data.model.Artists
 import com.truongdc21.mediatree.data.model.Song
 import com.truongdc21.mediatree.data.source.SongDataSource
+import org.w3c.dom.Document
 import javax.inject.Inject
 
 class SongRepository @Inject constructor(
@@ -32,5 +35,9 @@ class SongRepository @Inject constructor(
 
     suspend fun getRemoteSong() = withContextResult {
         songRemote.getSongRemote()
+    }
+
+    suspend fun getRemoteSongDocument(document: String) = withContextResult {
+        songRemote.getSongRemoteDocument(document)
     }
 }

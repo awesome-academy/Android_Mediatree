@@ -1,7 +1,10 @@
 package com.truongdc21.mediatree.data.source
 
 import androidx.lifecycle.LiveData
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.QuerySnapshot
 import com.truongdc21.mediatree.data.model.Song
+import org.w3c.dom.Document
 
 interface SongDataSource {
 
@@ -20,6 +23,8 @@ interface SongDataSource {
 
         suspend fun insertRemoteSong(song: Song)
 
-        suspend fun getSongRemote(): LiveData<List<Song>>
+        suspend fun getSongRemote(): QuerySnapshot
+
+        suspend fun getSongRemoteDocument(document: String): DocumentSnapshot
     }
 }
